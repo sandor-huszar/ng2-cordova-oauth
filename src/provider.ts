@@ -30,8 +30,9 @@ export class OAuthProvider implements IOauthProvider {
     }
 
     parseResponseInUrl(url) {
+      var response = null;
 	  try {	
-        const response = utils.parseQueryString(url);
+        response = utils.parseQueryString(url);
       } catch (e) {
 		  console.log('Parse error with url = ', url);
 	  }
