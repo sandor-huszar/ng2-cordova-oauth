@@ -30,12 +30,7 @@ export class OAuthProvider implements IOauthProvider {
     }
 
     parseResponseInUrl(url) {
-      var response = null;
-	  try {	
-        response = utils.parseQueryString(url);
-      } catch (e) {
-		  console.log('Parse error with url = ', url);
-	  }
+      const response = utils.parseQueryString(url);
 
       if (!this.isValid(response)) {
         const error = new Error(`Problem authenticating with ${this.name}`);

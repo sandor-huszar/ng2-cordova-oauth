@@ -1,7 +1,13 @@
 export const utils = {
 
     parseQueryString(url: string): Object {
-      const values = url.split(/[?#]{1,2}/)[1].split('&')
+	  var values = null;
+	  try {
+		values = url.split(/[?#]{1,2}/)[1].split('&');
+	  } catch (e) {
+        console.log(url);
+		return false;
+      }
 
       return values.reduce((map, value) => {
         const [paramName, paramValue] = value.split('=')
