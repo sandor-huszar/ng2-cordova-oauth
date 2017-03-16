@@ -30,8 +30,9 @@ export class OauthBrowser extends Oauth {
               }
 
               if (popup.location.href.indexOf(options.resolveOnUri) === 0) {
+				let popupHref = popup.location.href;
                 popup.close();
-                resolve({ url: popup.location.href });
+                resolve({ url: popupHref });
               }
             } catch (e) {
             }
