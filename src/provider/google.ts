@@ -25,7 +25,7 @@ export class Google extends OAuthProvider {
     }
 
     protected optionsToDialogUrl(options) {
-      return super.optionsToDialogUrl(options);// + '&approval_prompt=force'
+      return super.optionsToDialogUrl(options) + '&prompt=consent';// + '&approval_prompt=force'
     }
 
 }
